@@ -1,0 +1,33 @@
+name: 🚀 Feature
+description: "Submit a proposal for a new feature"
+title: "🚀 Feature: "
+labels: [feature]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out our feature request form
+  - type: textarea
+    id: feature-description
+    validations:
+      required: true
+    attributes:
+      label: "🔖 Feature description"
+      description: "A clear and concise description of what the feature is."
+      placeholder: ""
+  - type: textarea
+    id: pitch
+    validations:
+      required: true
+    attributes:
+      label: "Pitch"
+      description: "Please explain why this feature should be implemented and how it would be used. Add examples, if applicable."
+      placeholder: ""
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: " Have you checked if this issue has been raised before?"
+      options:
+        - label: "I checked and didn't find similar issue"
+          required: true
+ 
