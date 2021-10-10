@@ -10,9 +10,7 @@ title: Sunflower Dash
 
 [![GitPod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/Temperate-Designs/sunflower-dash)
 
-# Sunflower Dash
-
-## Introduction
+# Introduction
 
 - Player is a beach ball bouncing on sunflowers
 - Your currency in the game are flower petals and stars (stars are
@@ -36,14 +34,13 @@ title: Sunflower Dash
 - Some sunflowers go up and down
 - Thorny goatheads pop you
 
-## Game art
+# Game art
 
 ![Game Art](assets/sunflower-dash-art-gameplay.jpg)
 
 ![Game Art](assets/sunflower-dash-art-sketch.jpg)
 
-
-## Developer Notes
+# Developer Notes
 
 We suggest you use a Flutter aware IDE such as Android Studio, Visual
 Studio Code with the Flutter plugin, or go over to
