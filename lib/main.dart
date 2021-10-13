@@ -9,6 +9,10 @@ void main() {
 }
 
 class Player extends SpriteComponent with Hitbox, Collidable {
+  var speed = Vector2.zero();
+  final maxSpeed = 60;
+  var acceleration = Vector2(0, 20);
+
   Player() : super(size: Vector2.all(32)) {
     debugMode = true;
   }
@@ -18,7 +22,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     super.onLoad();
     sprite = await Sprite.load('ball.png');
     anchor = Anchor.center;
-    final hitbox = HitboxCircle(definition: 32);
+    final hitbox = HitboxRectangle();
     addHitbox(hitbox);
   }
 
@@ -31,7 +35,18 @@ class Player extends SpriteComponent with Hitbox, Collidable {
   @override
   void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
     super.onCollision(intersectionPoints, other);
+    speed *= -1;
     print('hit!');
+  }
+
+  @override
+  void update(double dt)
+  {
+    speed += acceleration * dt;
+    if (speed.length > maxSpeed) {
+      speed *= maxSpeed / speed.length;
+    }
+    position += speed * dt;
   }
 }
 
@@ -45,7 +60,7 @@ class Platform extends SpriteComponent with Hitbox, Collidable {
     super.onLoad();
     sprite = await Sprite.load('platform.png');
     anchor = Anchor.center;
-    final hitbox = HitboxRectangle(relation: Vector2(128, 32));
+    final hitbox = HitboxRectangle();
     addHitbox(hitbox);
   }
 
