@@ -44,3 +44,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Webpage artifacts
+/docs/_site
+/docs/.jekyll-cache
+/docs/Gemfile.lock
