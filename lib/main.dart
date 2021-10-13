@@ -12,6 +12,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
   var speed = Vector2.zero();
   final maxSpeed = 60;
   var acceleration = Vector2(0, 20);
+  var platformCollision = false;
 
   Player() : super(size: Vector2.all(32)) {
     debugMode = true;
@@ -35,13 +36,24 @@ class Player extends SpriteComponent with Hitbox, Collidable {
   @override
   void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
     super.onCollision(intersectionPoints, other);
-    speed *= -1;
-    print('hit!');
+    if (other is Platform && !platformCollision) {
+      platformCollision = true;
+      speed *= -1;
+      print('Hit platform!');
+    }
   }
 
   @override
-  void update(double dt)
-  {
+  void onCollisionEnd(Collidable other) {
+    super.onCollisionEnd(other);
+    if (other is Platform && platformCollision) {
+      platformCollision = false;
+    }
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
     speed += acceleration * dt;
     if (speed.length > maxSpeed) {
       speed *= maxSpeed / speed.length;
