@@ -3,8 +3,6 @@ layout: page
 title: Sunflowers
 ---
 
-# Sunflowers
-
 - Not all Sunflowers behave the same way.
 - Some Sunflowers stay still.
 - Sunflowers go up and down and side to side.
