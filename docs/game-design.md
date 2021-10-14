@@ -34,6 +34,6 @@ title: Game Design
 
 # Details
 
-- [Sunflowers]({% link sunflowers.md %})
+- [Sunflowers]({{ site.baseurl }}{% link sunflowers.md %})
 
-Back to [main page]({% link index.md %})
+Back to [main page]({{ site.baseurl }}{% link index.md %})

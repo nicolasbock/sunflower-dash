@@ -11,4 +11,4 @@ title: Sunflowers
 - The flower petals are floating in the air and you need to jump to
   get them.
 
-Back to [main page]({% link index.md %})
+Back to [main page]({{ site.baseurl }}{% link index.md %})

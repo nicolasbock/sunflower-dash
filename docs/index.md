@@ -12,7 +12,7 @@ title: Main
 
 # Introduction
 
-You can read about the [game design]({% link game-design.md %}).
+You can read about the [game design]({{ site.baseurl }}{% link game-design.md %}).
 
 # Developer Notes
 
