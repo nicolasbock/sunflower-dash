@@ -3,4 +3,4 @@ layout: page
 title: Bees
 ---
 
-Back to [main page]({{ site.baseurl }}{% link index.md %}).
+Back to [Game Design]({{ site.baseurl }}{% link game-design.md %}).
