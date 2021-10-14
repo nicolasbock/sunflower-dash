@@ -35,5 +35,6 @@ title: Game Design
 # Details
 
 - [Sunflowers]({{ site.baseurl }}{% link sunflowers.md %})
+- [Bees]({{ site.baseurl }}{% link bees.md %})
 
-Back to [main page]({{ site.baseurl }}{% link index.md %})
+Back to [main page]({{ site.baseurl }}{% link index.md %}).
