@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "dart-code.flutter",
+        "eamodio.gitlens",
+        "dart-code.dart-code",
+        "editorconfig.editorconfig",
+        "mhutchie.git-graph"
+    ]
+}
