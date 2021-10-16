@@ -1,6 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/input.dart';
+import 'package:flutter/widgets.dart';
 import 'plaform.dart';
 
 class Player extends SpriteComponent with Hitbox, Collidable {
@@ -8,9 +9,11 @@ class Player extends SpriteComponent with Hitbox, Collidable {
   final maxSpeed = 400;
   var acceleration = Vector2(0, 120);
   var platformCollision = false;
+  var screenCollision = false;
   final JoystickComponent joystick;
+  final ScreenCollidable screen;
 
-  Player(this.joystick) : super(size: Vector2.all(32)) {
+  Player(this.joystick, this.screen) : super(size: Vector2.all(32)) {
     debugMode = true;
   }
 
@@ -32,18 +35,36 @@ class Player extends SpriteComponent with Hitbox, Collidable {
   @override
   void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
     super.onCollision(intersectionPoints, other);
-    if (other is Platform && !platformCollision) {
-      platformCollision = true;
-      speed = Vector2.zero();
-      print('Hit platform!');
+    if (other is Platform) {
+      if (!platformCollision) {
+        platformCollision = true;
+        speed = Vector2.zero();
+        print('Hit platform!');
+      } else {
+        print('Ignoring platorm collision');
+      }
+    } else if (other is ScreenCollidable) {
+      if (!screenCollision) {
+        screenCollision = true;
+        speed = Vector2.zero();
+        print('Going out of bounds');
+      } else {
+        print('Ignoring screen collision');
+      }
     }
   }
 
   @override
   void onCollisionEnd(Collidable other) {
     super.onCollisionEnd(other);
-    if (other is Platform && platformCollision) {
-      platformCollision = false;
+    if (other is Platform) {
+      if (platformCollision) {
+        platformCollision = false;
+      }
+    } else if (other is ScreenCollidable) {
+      if (screenCollision) {
+        screenCollision = false;
+      }
     }
   }
 
@@ -53,7 +74,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     if (!joystick.delta.isZero()) {
       position.add(joystick.relativeDelta * 80 * dt);
     }
-    if (!platformCollision) {
+    if (!platformCollision && !screenCollision) {
       speed += acceleration * dt;
     }
     if (speed.length > maxSpeed) {

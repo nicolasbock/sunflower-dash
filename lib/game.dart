@@ -14,11 +14,16 @@ class SunflowerDash extends FlameGame
   late final JoystickComponent joystick;
   late final HudButtonComponent button;
   late final Platform platform;
+  late final ScreenCollidable screen;
 
   SunflowerDash();
   @override
   Future<void> onLoad() async {
     super.onLoad();
+
+    screen = ScreenCollidable();
+
+    add(screen);
 
     final knobPaint = BasicPalette.blue.withAlpha(200).paint();
     final backgroundPaint = BasicPalette.blue.withAlpha(100).paint();
@@ -31,7 +36,7 @@ class SunflowerDash extends FlameGame
 
     add(joystick);
 
-    player = Player(joystick);
+    player = Player(joystick, screen);
     add(player);
 
     button = HudButtonComponent(
