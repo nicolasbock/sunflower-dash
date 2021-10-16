@@ -2,6 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame/palette.dart';
+import 'package:flame/parallax.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flame/geometry.dart';
 
@@ -21,8 +22,12 @@ class SunflowerDash extends FlameGame
   Future<void> onLoad() async {
     super.onLoad();
 
-    screen = ScreenCollidable();
+    final parallax = await loadParallaxComponent([
+      ParallaxImageData('background.png'),
+    ]);
+    add(parallax);
 
+    screen = ScreenCollidable();
     add(screen);
 
     final knobPaint = BasicPalette.blue.withAlpha(200).paint();
@@ -33,7 +38,6 @@ class SunflowerDash extends FlameGame
       background: Circle(radius: 60).toComponent(paint: backgroundPaint),
       margin: const EdgeInsets.only(left: 10, bottom: 10),
     );
-
     add(joystick);
 
     player = Player(joystick, screen);
@@ -44,11 +48,9 @@ class SunflowerDash extends FlameGame
       margin: const EdgeInsets.only(right: 10, bottom: 10),
       onPressed: () => player.jump(),
     );
-
     add(button);
 
     platform = Platform();
-
     add(platform);
   }
 }
