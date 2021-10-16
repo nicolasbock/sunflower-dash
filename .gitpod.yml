@@ -77,11 +77,18 @@ ports:
 
 vscode:
   extensions:
-    - dart-code.flutter
-    - eamodio.gitlens
+    - aaron-bond.better-comments
     - dart-code.dart-code
+    - dart-code.flutter
+    - davidanson.vscode-markdownlint
+    - eamodio.gitlens
     - editorconfig.editorconfig
+    - gruntfuggly.todo-tree
+    - jeroen-meijer.pubspec-assist
+    - kisstkondoros.vscode-gutter-preview
     - mhutchie.git-graph
+    - naumovs.color-highlight
+    - usernamehw.errorlens
 
 github:
   prebuilds:
