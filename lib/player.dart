@@ -1,11 +1,12 @@
 import 'package:flame/components.dart';
 import 'package:flame/geometry.dart';
+import 'package:flame/input.dart';
 import 'plaform.dart';
 
 class Player extends SpriteComponent with Hitbox, Collidable {
   var speed = Vector2.zero();
-  final maxSpeed = 200;
-  var acceleration = Vector2(0, 20);
+  final maxSpeed = 400;
+  var acceleration = Vector2(0, 120);
   var platformCollision = false;
   final JoystickComponent joystick;
 
@@ -54,10 +55,16 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     }
     if (!platformCollision) {
       speed += acceleration * dt;
-      if (speed.length > maxSpeed) {
-        speed *= maxSpeed / speed.length;
-      }
-      position += speed * dt;
     }
+    if (speed.length > maxSpeed) {
+      speed *= maxSpeed / speed.length;
+    }
+    position += speed * dt;
+  }
+
+  void jump() {
+    print("jumping");
+    speed -= Vector2(0, 60);
+    platformCollision = false;
   }
 }

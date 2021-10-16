@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
+import 'package:flame/input.dart';
 import 'package:flame/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flame/geometry.dart';
@@ -8,33 +9,40 @@ import 'player.dart';
 import 'plaform.dart';
 
 class SunflowerDash extends FlameGame
-    with HasCollidables, HasDraggableComponents {
+    with HasCollidables, HasDraggableComponents, HasTappableComponents {
+  late final Player player;
+  late final JoystickComponent joystick;
+  late final HudButtonComponent button;
+  late final Platform platform;
+
   SunflowerDash();
   @override
   Future<void> onLoad() async {
     super.onLoad();
 
-    late final joystick;
-    late final joystickPlayer;
-
-    final knowPaint = BasicPalette.blue.withAlpha(200).paint();
+    final knobPaint = BasicPalette.blue.withAlpha(200).paint();
     final backgroundPaint = BasicPalette.blue.withAlpha(100).paint();
 
     joystick = JoystickComponent(
-      size: 2.0,
-      knob: Circle(radius: 20).toComponent(paint: knowPaint),
+      knob: Circle(radius: 20).toComponent(paint: knobPaint),
       background: Circle(radius: 60).toComponent(paint: backgroundPaint),
       margin: const EdgeInsets.only(left: 10, bottom: 10),
     );
-    // joystickPlayer = JoystickPlayer(joystick);
 
     add(joystick);
 
-    final player = Player(joystick);
-
+    player = Player(joystick);
     add(player);
 
-    final platform = Platform();
+    button = HudButtonComponent(
+      button: Circle(radius: 20).toComponent(paint: knobPaint),
+      margin: const EdgeInsets.only(right: 10, bottom: 10),
+      onPressed: () => player.jump(),
+    );
+
+    add(button);
+
+    platform = Platform();
 
     add(platform);
   }
