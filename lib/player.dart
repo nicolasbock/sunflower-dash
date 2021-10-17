@@ -50,6 +50,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
       if (!screenCollision) {
         screenCollision = true;
         speed = Vector2.zero();
+        position += Vector2(0, other.size.y - center.y - 16);
         print('Going out of bounds');
       } else {
         print('Ignoring screen collision');
