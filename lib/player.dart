@@ -41,6 +41,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
         speed = Vector2.zero();
         // Adjust position so that the player sits on the platform and is not
         // partially in the platform.
+        // TODO: Fix collision from side and bottom.
         position += Vector2(0, other.center.y - center.y - 32);
         print('Hit platform!');
       } else {

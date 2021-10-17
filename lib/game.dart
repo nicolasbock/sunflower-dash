@@ -14,7 +14,7 @@ class SunflowerDash extends FlameGame
   late final Player player;
   late final JoystickComponent joystick;
   late final HudButtonComponent button;
-  late final Platform platform;
+  late final List<Platform> platform = [];
   late final ScreenCollidable screen;
 
   SunflowerDash();
@@ -50,7 +50,12 @@ class SunflowerDash extends FlameGame
     );
     add(button);
 
-    platform = Platform();
-    add(platform);
+    platform.add(Platform(Vector2(100, 300)));
+    platform.add(Platform(Vector2(300, 500)));
+    platform.add(Platform(Vector2(220, 650)));
+
+    for (var p in platform) {
+      add(p);
+    }
   }
 }

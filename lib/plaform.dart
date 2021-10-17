@@ -2,8 +2,12 @@ import 'package:flame/components.dart';
 import 'package:flame/geometry.dart';
 
 class Platform extends SpriteComponent with Hitbox, Collidable {
-  Platform() : super(size: Vector2(128, 32)) {
+  Vector2 pos;
+
+  Platform(this.pos) : super(size: Vector2(128, 32)) {
     debugMode = true;
+    print('setting platform position');
+    position = pos;
   }
 
   @override
@@ -13,11 +17,5 @@ class Platform extends SpriteComponent with Hitbox, Collidable {
     anchor = Anchor.center;
     final hitbox = HitboxRectangle();
     addHitbox(hitbox);
-  }
-
-  @override
-  void onGameResize(Vector2 gameSize) {
-    super.onGameResize(gameSize);
-    position = Vector2(gameSize[0] / 2, gameSize[1] - 100);
   }
 }
