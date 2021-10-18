@@ -1,4 +1,4 @@
-baseURL = 'https://temperate-designs.github.io/'
+baseURL = 'https://temperate-designs.github.io/sunflower-dash'
 languageCode = 'en-us'
 title = 'Sunflower Dash'
 theme = ["ananke"]
@@ -6,10 +6,9 @@ googleAnalytics = "G-K69Z84DP1Y"
 enableRobotsTXT = true
 
 [params]
-  site_logo = '/geometric.png'
+  site_logo = '/icon.png'
   author = 'Temperate Designs'
   description = 'Simple yet useful apps.'
   github = 'https://github.com/Temperate-Designs'
-  featured_image = '/red-and-blue-ink-explosion-picjumbo-com-logo.jpg'
+  featured_image = '/black-oil-sunflower.jpg'
   recent_posts_number = 2
-
