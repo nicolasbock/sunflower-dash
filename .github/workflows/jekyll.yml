@@ -17,8 +17,8 @@ jobs:
           docker run \
           --volume ${{ github.workspace }}/docs:/srv/jekyll \
           --volume ${{ github.workspace }}/docs/_site:/srv/jekyll/_site \
-          jekyll/builder:latest \
-          /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && bundle info minima && jekyll build --future --verbose --trace"
+          jekyll/jekyll:latest \
+          jekyll build
       - name: Store webpage
         uses: actions/upload-artifact@v2
         with:
