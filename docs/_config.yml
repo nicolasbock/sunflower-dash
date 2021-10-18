@@ -8,4 +8,5 @@ author:
   name: Temperate Designs
 minima:
   social_links:
-    github: 'Temperate-Designs/sunflower-dash'
+    github: Temperate-Designs
+show_excerpts: true
