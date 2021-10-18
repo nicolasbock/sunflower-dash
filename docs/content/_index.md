@@ -1,6 +1,6 @@
 ---
 title: Sunflower Dash
-description: Simply Useful Apps
+description: A fun game with lots of sunflowers
 menu: [main]
 featured_image: /black-oil-sunflower.jpg
 ---
