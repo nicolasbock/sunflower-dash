@@ -8,7 +8,7 @@ enableRobotsTXT = true
 [params]
   site_logo = '/icon.png'
   author = 'Temperate Designs'
-  description = 'Simple yet useful apps.'
-  github = 'https://github.com/Temperate-Designs'
+  description = 'A fun game with lots of sunflowers'
+  github = 'https://github.com/Temperate-Designs/sunflower-dash'
   featured_image = '/black-oil-sunflower.jpg'
   recent_posts_number = 2
