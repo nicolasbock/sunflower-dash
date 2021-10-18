@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Main
+title: Sunflower Dash
 ---
 
 [![Project](https://img.shields.io/badge/project-Kanban-orange)](https://github.com/Temperate-Designs/sunflower-dash/projects/1) &nbsp;
