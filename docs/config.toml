@@ -6,7 +6,7 @@ googleAnalytics = "G-K69Z84DP1Y"
 enableRobotsTXT = true
 
 [params]
-  site_logo = '/icon.png'
+  site_logo = '/sunflower-dash-ball.png'
   author = 'Temperate Designs'
   description = 'A fun game with lots of sunflowers'
   github = 'https://github.com/Temperate-Designs/sunflower-dash'
