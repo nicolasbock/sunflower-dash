@@ -163,6 +163,7 @@ sidebar_search_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
+no = 'We are sorry! Please <a href="https://github.com/Temperate-Designs/sunflower-dash/issues/new">tell us how we can improve</a>.'
 yes = 'Glad to hear it! Please <a href="https://github.com/Temperate-Designs/sunflower-dash/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
