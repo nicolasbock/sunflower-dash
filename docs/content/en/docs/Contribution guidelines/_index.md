@@ -24,6 +24,12 @@ use GitHub pull requests for this purpose. Consult
 [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
 information on using pull requests.
 
+## Developer Setup
+
+We suggest you use a Flutter aware IDE such as Android Studio, Visual
+Studio Code with the Flutter plugin, or go over to
+[GitPod](https://gitpod.io#https://github.com/Temperate-Designs/sunflower-dash)
+where everything is already set up.
 ## Quick start with Netlify
 
 Here's a quick guide to updating the docs. It assumes you're familiar with the
@@ -77,5 +83,3 @@ If you've found a problem in the docs, but you're not sure how to fix it yoursel
 * [Docsy user guide](https://www.docsy.dev/docs/): All about Docsy, including how it manages navigation, look and feel, and multi-language support.
 * [Hugo documentation](https://gohugo.io/documentation/): Comprehensive reference for Hugo.
 * [Github Hello World!](https://guides.github.com/activities/hello-world/): A basic introduction to GitHub concepts and workflow.
-
-
