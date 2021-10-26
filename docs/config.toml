@@ -163,8 +163,8 @@ sidebar_search_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-no = 'We are sorry! Please <a href="https://github.com/Temperate-Designs/sunflower-dash/issues/new">tell us how we can improve</a>.'
 yes = 'Glad to hear it! Please <a href="https://github.com/Temperate-Designs/sunflower-dash/issues/new">tell us how we can improve</a>.'
+no = 'We are sorry! Please <a href="https://github.com/Temperate-Designs/sunflower-dash/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page, 
@@ -178,23 +178,23 @@ enable = false
 	name = "User mailing list"
 	url = "https://example.org/mail"
 	icon = "fa fa-envelope"
-	desc = "Discussion and help from your fellow users"
+        desc = "Discussion and help from your fellow users"
 [[params.links.user]]
 	name ="Twitter"
 	url = "https://example.org/twitter"
 	icon = "fab fa-twitter"
-    desc = "Follow us on Twitter to get the latest news!"
+        desc = "Follow us on Twitter to get the latest news!"
 [[params.links.user]]
 	name = "Stack Overflow"
 	url = "https://example.org/stack"
 	icon = "fab fa-stack-overflow"
-    desc = "Practical questions and curated answers"
+        desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
 	url = "https://github.com/Temperate-Designs/sunflower-dash"
 	icon = "fab fa-github"
-    desc = "Development takes place here!"
+        desc = "Development takes place here!"
 # [[params.links.developer]]
 # 	name = "Slack"
 # 	url = "https://github.com/Temperate-Designs/sunflower-dash/discussions"
